@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Users Table </h2>
+                    <h2>Patients Table </h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -43,6 +43,7 @@
                             <th class="column-title">DOB </th>
                             <th class="column-title">Created_At </th>
                             <th class="column-title">Updated_At </th>
+                            <th class="column-title">Action </th>
                           </tr>
                         </thead>
 
@@ -59,6 +60,7 @@
                             <td class=" ">{{$patients->DOB}}</td>
                             <td class=" ">{{$patients->created_at}}</td>
                             <td class=" ">{{$patients->updated_at}}</td>
+                            <td><a class="btn-btn-danger" href="/edit/{{$patients->id}}">Edit</a>&nbsp;|&nbsp; <a class="btn-btn-danger" href="/delete/{{$patients->id}}">Delete</a></td>
                           </tr>
                           @endforeach
                         </tbody>

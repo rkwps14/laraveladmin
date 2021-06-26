@@ -45,6 +45,8 @@
   @include('layouts.sidebar')
   @yield('content')
 
+  
+
   <!-- for register user -->
   <script src="../vendor/jquery/jquery.min.js"></script>
     <!-- Vendor JS-->

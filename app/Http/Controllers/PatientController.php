@@ -29,14 +29,44 @@ class PatientController extends Controller
             'contact' => $request->input('contact'),
             'age' => $request->input('age'),
             'DOB' => $request->input('dob'),
-            'created_at' => date('Y-m-d h:i:s')
+            'created_at' => date('Y-m-d h:i:s'),
+            'updated_at' => $request->input('udpate')
 
         ]);
         
 
     	if($query){
-            return redirect('/')->with('success','Patient registered successfully');
+            return redirect('/patients')->with('success','Patient registered successfully');
         }
     }
+
+    public function edit($id){
+
+        $pt = Patient::find($id);
+        
+        return view('patients.edit')->with('ptArr',$pt);
+    }
+
+    public function update(Request $request, $id){
+        $patient = Patient::find($id);
+        
+        $patient->name = $request->input('name');
+        $patient->contact = $request->input('contact');
+        $patient->age = $request->input('age');
+        $patient->DOB = $request->input('dob');
+        $patient->updated_at = date('Y-m-d h:i:s');
+        $patient->save() ;
+
+        return redirect('/patients');
+    }
+
+    public function destroy(Request $request, $id){
+        DB::table('patients')->where('id',$id)->delete();
+
+        return redirect('/patients');
+    }
+
+
+    
 
 }

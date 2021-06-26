@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Users Table </h2>
+                    <h2>Branch Table </h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -26,9 +26,6 @@
                   </div>
 
                   <div class="x_content">
-
-                    
-
                     <div class="table-responsive">
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>
@@ -42,6 +39,7 @@
                             <th class="column-title">Created_at </th>
                             <th class="column-title">Updated_at </th>
                             <th class="column-title">Status </th>
+                            <th class="column-title">Action</th>
                           </tr>
                         </thead>
 
@@ -57,6 +55,7 @@
                             <td class=" ">{{$branchs->created_at}}</td>
                             <td class=" ">{{$branchs->update_at}}</td>
                             <td class="a-right a-right ">{{$branchs->status}}</td>
+                            <td><a class="btn-btn-danger" href="branch/edit/{{$branchs->id}}">Edit</a>&nbsp;|&nbsp; <a class="btn-btn-danger" href="branch/delete/{{$branchs->id}}">Delete</a></td>
                           </tr>
                           @endforeach
                         </tbody>

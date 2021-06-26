@@ -6,10 +6,10 @@
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
-                    <h2 class="title">Add New Patient</h2>
+                    <h2 class="title">Update Patient Details</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{url('patients/submit')}}">
+                    <form method="POST" action="{{url('update',[$ptArr->id])}}">
                     @csrf
                         <div class="form-row m-b-55">
                             <div class="name">Name</div>
@@ -17,7 +17,7 @@
                                 <div class="row row-space">
                                     <div class="col-12">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="name">
+                                            <input class="input--style-5" value="{{$ptArr->name}}" type="text" name="name">
                                         </div>
                                     </div>
                                 </div>
@@ -28,7 +28,7 @@
                             <div class="name">Contact</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="contact">
+                                    <input class="input--style-5" value="{{$ptArr->contact}}" type="text" name="contact">
                                 </div>
                             </div>
                         </div>
@@ -39,7 +39,7 @@
                                 <div class="row row-space">
                                     <div class="col-12">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="age">
+                                            <input class="input--style-5" value="{{$ptArr->age}}" type="text" name="age">
                                         </div>
                                     </div>
                                 </div>
@@ -49,12 +49,13 @@
                             <div class="name">DOB</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="dob">
+                                    <input class="input--style-5" value="{{$ptArr->DOB}}" type="text" name="dob">
                                 </div>
                             </div>
                         </div>
+                        
                         <div>
-                            <button class="btn btn--radius-2 btn--red" type="submit" href="{{url('patients')}}">Register</button>
+                            <button class="btn btn--radius-2 btn--red" type="submit" href="{{url('patients')}}">Update</button>
                         </div>
                     </form>
                 </div>

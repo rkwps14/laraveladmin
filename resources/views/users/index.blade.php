@@ -50,7 +50,7 @@
                             <td class=" ">{{$user->contact}}</td>
                             <td class="a-right a-right ">{{$user->type}}</td>
                             <td class=" last">{{$user->created_at}}</td>
-                            <td><a class="btn-btn-danger" href="">Edit</a>&nbsp;<a>Delete</a></td>
+                            <td><a class="btn-btn-danger" href="/edit/{{$user->id}}">Edit</a>&nbsp;|&nbsp; <a class="btn-btn-danger" href="/delete/{{$user->id}}">Delete</a></td>
                           </tr>
                           @endforeach
                         </tbody>

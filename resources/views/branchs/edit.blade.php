@@ -9,7 +9,7 @@
                     <h2 class="title">Registration New Branch</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="../branch/submit">
+                <form method="POST" action="{{url('branch/update',[$branchArr->id])}}">
                     @csrf
                         <div class="form-row m-b-55">
                             <div class="name">Branch Name</div>
@@ -17,7 +17,7 @@
                                 <div class="row row-space">
                                     <div class="col-12">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="branch">
+                                            <input class="input--style-5" value="{{$branchArr->name}}" type="text" name="branch">
                                         </div>
                                     </div>
                                 </div>
@@ -27,7 +27,7 @@
                             <div class="name">Amount Per Patients</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="amount">
+                                    <input class="input--style-5" value="{{$branchArr->amount_per_patient}}" type="text" name="amount">
                                 </div>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="type">
+                                        <select name="type" value="{{$branchArr->amount_per_patient}}">
                                             <option disabled="disabled" selected="selected">Choose option</option>
                                             <option>1</option>
                                             <option>2</option>
@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <div>
-                            <button class="btn btn--radius-2 btn--red" type="submit" href="{{url('/branchs')}}">Add Branch</button>
+                            <button class="btn btn--radius-2 btn--red" type="submit" href="{{url('branchs')}}">Update</button>
                         </div>
                     </form>
                 </div>

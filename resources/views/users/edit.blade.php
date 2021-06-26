@@ -6,12 +6,11 @@
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
-                    <h2 class="title">User Registration</h2>
+                    <h2 class="title">User Edit Details</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="{{url('users/submit')}}">
+                    <form method="POST" action="{{url('users/update',[$usersArr->id])}}">
                         
-
                         @csrf
 
                         <div class="form-row m-b-55">
@@ -20,7 +19,7 @@
                                 <div class="row row-space">
                                     <div class="col-12">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="username">
+                                            <input class="input--style-5" value="{{$usersArr->username}}" type="text" name="username">
                                             @error('username')
                                                 <span style="color:red;">{{$message}}</span>
                                             @enderror
@@ -35,7 +34,7 @@
                                 <div class="row row-space">
                                     <div class="col-12">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="email" name="email">
+                                            <input class="input--style-5" value="{{$usersArr->email}}" type="email" name="email">
                                             @error('email')
                                                 <span style="color:red;">{{$message}}</span>
                                             @enderror
@@ -48,7 +47,7 @@
                             <div class="name">Password</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="password">
+                                    <input class="input--style-5" value="{{$usersArr->password}}" type="text" name="password">
                                     @error('password')
                                         <span style="color:red;">{{$message}}</span>
                                     @enderror
@@ -59,7 +58,7 @@
                             <div class="name">Contact</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="contact">
+                                    <input class="input--style-5" value="{{$usersArr->contact}}" type="text" name="contact">
                                     @error('contact')
                                         <span style="color:red;">{{$message}}</span>
                                     @enderror
@@ -72,7 +71,7 @@
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
                                         <select name="type">
-                                            <option disabled="disabled" selected="selected">Choose option</option>
+                                            <option selected="selected">Choose option</option>
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -87,7 +86,7 @@
                             </div>
                         </div>
                         <div>
-                            <button class="btn btn--radius-2 btn--red" type="submit" href="{{url('users')}}">Register</button>
+                            <button class="btn btn--radius-2 btn--red" type="submit" href="{{url('users')}}">Update</button>
                         </div>
                     </form>
                 </div>

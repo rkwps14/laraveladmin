@@ -4,7 +4,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="/" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+              <a href="/dashboard" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -27,7 +27,7 @@
                   </li>
                   <li><a>Doctors <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?= url('doctors/list'); ?>">Patient chart</a></li>
+                      <li><a href="<?= url('patient/chart'); ?>">Patient chart</a></li>
                     </ul>
                   </li>
                   <li><a>Patients <span class="fa fa-chevron-down"></span></a>
